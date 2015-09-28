@@ -14,7 +14,13 @@ router.get('/register', function(req, res, next) {
 	res.render('register.jade')
 });
 
+router.get('/dashboard', function(req, res, next) {
+	res.render('dashboard.jade')
+});
 
+router.get('/logout', function(req, res, next) {
+	res.redirect('/')
+})
 
 
 module.exports = router;

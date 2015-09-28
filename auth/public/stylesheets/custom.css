@@ -1,0 +1,34 @@
+html body {
+    font-family: Lato, sans-serif;
+    color: gray;
+    background-color: #F1F0EF
+}
+
+h1 h2 {
+	color: black;
+}
+
+li {
+	list-style: none;
+}
+
+.dashboard {
+	background: coral;
+}
+
+#dashStudents {
+    background: lightblue;
+    border-radius: 4px;
+}
+
+#dashInvoices {
+	border-radius: 4px;
+}
+
+.student {
+    text-align: left;
+}
+
+.invoice {
+	text-align: left;
+}
