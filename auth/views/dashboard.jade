@@ -1,11 +1,38 @@
-extends layout
-
-block content
-	div(class='container text-center col-md-12')
-		h1 Dashboard
-		p You are now logged in.
-		h3 It is [insert date/time object here]
-		//- div(class='col-md-6')
-		//- 	h2 User Information
-
-	button <a href='/login'>Logout</a>
+extends layout2
+head
+	title Dashboard
+	
+body
+	block content	
+		div.container.text-center.col-sm-12(style='height: 100%')
+			h1 #{title}
+			h2 Dashboard
+			if error
+				h2 #{error}
+			h4#dashDate Today is 
+			div.col-sm-12(style='text-align: left')
+				h3 Student Information
+				button(class='btn btn-warning', id='hideAll') Collapse All
+				div.col-sm-12
+					ul#studentList
+					if students
+						each student in students
+							div.col-sm-10.well
+								li(class='studentName')= student.last_name + ", " + student.first_name
+								ul(class='studentDashInfo')
+									a(href=student.email ? 'mailto:' + student.email : 'NoEmailOnFile')
+											li 
+												i(class='fa fa-paper-plane') &nbsp; #{student.email}
+									li= "Instrument: " + student.instrument
+									li= "Suzuki: " + student.Suzuki
+									li= "Group: " + student.group
+									li #{student.birthdate.toLocaleDateString()}
+									li= student.phone
+									a(href='/editstudent')
+										li Edit Student Information
+									br
+									li(style='text-decoration: underline', class='lessons') 
+										strong Lessons Taken
+									ol(class='lessonsTaken')
+										each lesson in student.lessons_taken
+											li= lesson 

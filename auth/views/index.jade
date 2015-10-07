@@ -1,8 +1,22 @@
 extends layout
 
-block vars
-	var title = 'home'
-
 block content
-	h1= title
-	p Welcome to the home page.  Please <a href="/register">register</a> or <a href="/login">login</a> to continue!
+	div.row
+		div.col-md-6.col-md-push3.text-center.welcome
+			h1= title
+			if message
+				p #{message}
+			
+			p Welcome to the home page.  Please <a href="/register">register</a> or <a href="/login">login</a> to continue!
+	div.row.sellingPoints
+		div.col-md-4.text-center
+			h3 Schedule.
+			p Integration with google calendar.
+
+		div.col-md-4.text-center
+			h3 Track.
+			p Store weekly practice logs, lesson instructions. Measure with detailed analytics to follow your students' progress.
+
+		div.col-md-4.text-center
+			h3 Profit.
+			p Generate invoices, track payments, and track your teaching revenue flows over time.

@@ -1,0 +1,36 @@
+doctype html
+html
+	head
+		title= title
+		//- link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+		link(rel='stylesheet', href='/stylesheets/custom.css')
+		link(rel="stylesheet", href="/plugins/font-awesome/css/font-awesome.css")
+	body
+		div#wrapper
+			div#toggleButton
+			div#sidebar-wrapper
+				ul.sidebar-nav
+					li.sidebar-brand Teachers Assistant
+					li #{teacher.firstName} #{teacher.lastName} 
+					li
+							a(href='/dashboard') Dashboard
+					li
+						a(href='/managestudents') Register New Student
+					li
+						a(href='/managestudents') Edit Student
+					li
+						a(href='#') Analytics
+					li
+						a(href='#') Schedules
+					li
+						a(href='/login') Logout
+			div#page-content-wrapper
+				div.container-fluid
+					div.row
+						div.col-lg-12
+							block content
+		script(src='/javascripts/jquery.min.js')
+		script(src='/javascripts/main.js')
+		footer Copyright Benjamin Downs, 2015
+	

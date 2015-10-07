@@ -5,20 +5,23 @@ block vars
 
 block content
   h1= title
-  h2 Log Into Your Account
+  div.container.text-center
+    h2 Log In
 
-  if error
-    p ERROR: #{error}
+    if error
+      p ERROR: #{error}
+      p Have you already <a href="/register">registered</a>?
 
-  form(method="post")
-    //- input(type="hidden", name="_csrf", value=csrfToken)
+    if message
+      p #{message}
 
-    span Email:
-    input(type="email", name="email", required=true)
-    br
+    form(method="post" class="outerForm")
+      input(type="hidden", name="_csrf", value=csrfToken)
 
-    span Password:
-    input(type="password", name="password", required=true)
-    br
+      input(type="email", name="email", placeholder='email@example.com' required=true)
+      br
 
-    input(type="submit")
+      input(type="password", name="password", placeholder='password' required=true)
+      br
+
+      button.btn.btn-success(type="submit") Submit

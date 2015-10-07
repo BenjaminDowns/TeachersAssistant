@@ -1,8 +1,31 @@
-html body {
-    font-family: Lato, sans-serif;
-    color: gray;
-    background-color: #F1F0EF
+html {
+    height: 100%;
 }
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    color: gray;
+    background-color: #F1F0EF;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.welcome {
+    background-color: #FF8980;
+    margin-left: 25%;
+    color: black;
+}
+
+a u {
+    color: #F1F0EF;
+    text-decoration: underline;
+    text-transform: underline;
+}
+
+/*a:visited {color:gray;}  /* visited link */
+a:hover {color:#FF8980;}  /* mouse over link */
+a:active {color:gray;}  /* selected link */*/
 
 h1 h2 {
 	color: black;
@@ -10,6 +33,20 @@ h1 h2 {
 
 li {
 	list-style: none;
+    font-weight: 100;
+}
+
+input {
+    transition: all .2s ease-in-out;
+    border-radius: 4px;
+}
+
+input:focus {
+    padding: 0px 10px 1px 1px;
+    margin: 10px, 0px, 10px, 0px;
+    -moz-box-shadow:5px 5px 25px rgba(0,0,0,0.3);
+    -webkit-box-shadow:5px 5px 25px rgba(0,0,0,0.3);
+    box-shadow:5px 5px 25px rgba(0,0,0,0.3);
 }
 
 .dashboard {
@@ -32,3 +69,197 @@ li {
 .invoice {
 	text-align: left;
 }
+/*
+input {
+    margin: 5px 0em 5px 0em;
+}*/
+
+.outerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#teacherInfo {
+    text-align: left;
+    border-right: 1px solid #FF8980;
+    height: 100%;
+}
+
+nav {
+    background-color: lightblue;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#logout {
+   -webkit-align-self: flex-start;
+   align-self: flex-start;
+}
+
+.sellingPoints {
+    margin: 20px;
+}
+
+footer {
+    margin-left: 70%;
+}
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5 ease;
+    -moz-transition: all 0.5 ease;
+    -o-transition: all 0.5 ease;
+    transition: all 0.5 ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all -.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 30px;
+    line-height: 40px;
+    width: 100%;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px; 
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: lightblue;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+
+}
+
+#toggleButton {
+    width: 2em;
+    height: 2em;
+    background: white;
+    position: fixed;
+    top: 10px;
+    left: 240px;
+    z-index: 1001;
+    -webkit-transition: all 0.5 ease;
+    -moz-transition: all 0.5 ease;
+    -o-transition: all 0.5 ease;
+    transition: all 0.5 ease;
+}
+
+#toggleButton.toggled {
+    left: 10px;
+}
+
+.studentName:hover {
+    color: #FF8980;
+    cursor: pointer;
+    transition: all .15s ease;
+};
+
+.studentDashInfo {
+    transition: all .15s ease;
+}
+
+.lessons:hover {
+    color: #FF8980;
+    cursor: pointer;
+    transition: all .15s ease;
+};

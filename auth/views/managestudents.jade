@@ -1,0 +1,72 @@
+extends layout2
+head
+	title= 'Manage Students'
+
+body
+block content
+	div.text-center.col-md-12
+		h3 Manage Students
+	if message
+		h2.alert.alert-success #{message}
+	if error
+		h2.alert.alert-danger #{error}
+	div.row
+		div.col-sm-12.text-center.manageStudentForm
+			h4 Register a new student	
+			div.col-sm-12
+				form.form-horizontal(method="post")
+					input(type="hidden", name="_csrf", value=csrfToken)
+					Label Name
+					br
+					input(type="text", name="name", placeholder='YoYo Ma' required=true)
+					br
+					br
+
+					label Email
+					br
+					input(type="email", name="email", placeholder='student@email.com' required=true)
+					br
+					br
+
+					label Date of Birth
+					br
+					input(type="dob", name="dob", placeholder='yyyy/mm/dd' required=true)
+					br
+					br
+					
+					label Suzuki Student?
+						input(type="checkbox", name="Suzuki") 
+					br
+					br
+
+					label Start Date – if today, leave blank
+					br
+					input(type="start_date", name="start_date", placeholder='yyyy/mm/dd' required=false)
+					br
+					br
+
+					label Instrument
+					br
+					input(type="instrument", name="instrument", placeholder='"cello" or "sousaphone" or....' required=false)
+					br
+					br
+
+					label Rate per hour
+					br
+					input(type="rate", name="rate/hr", placeholder='60' required=true)
+					br
+					br
+
+					label Group (for group lessons)
+					br
+					input(type="group", name="group", placeholder='C' required=false)
+					br
+					br
+
+					label Lesson Time
+					br
+					input(type="lesson time", name="lesson_time", required=false)
+					br
+					br
+
+					button.btn.btn-success(type="submit") Register Student
